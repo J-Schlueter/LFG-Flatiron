@@ -5,7 +5,7 @@ function HomePage() {
         <div>
             <NavBar />
             <div className="homePageDiv">
-                <h1>Welcome to LFG</h1>
+                <h1>Welcome to Flatiron LFG</h1>
             </div>
             
         </div>

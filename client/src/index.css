@@ -25,9 +25,21 @@ code {
 
 .NavBarUL {
   position: absolute;
-  left: 10%;
   list-style-type: none;
   font-size: medium;
   font-weight: 700;
   color: #9b9b9b;
+}
+
+.navBarLink {
+  display: inline;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+}
+
+body {
+  /* background-color: #d4d4d4; */
 }
