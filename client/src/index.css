@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.NavBar {
+  /* position: fixed; */
+   top: 0;
+   z-index: 100;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  width: 100%;
+  background-color: rgb(206, 206, 206);
+  box-shadow: 0 2px 4px 0 #888888;
+} 
+
+.NavBarUL {
+  position: absolute;
+  left: 10%;
+  list-style-type: none;
+  font-size: medium;
+  font-weight: 700;
+  color: #9b9b9b;
+}
