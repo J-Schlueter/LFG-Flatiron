@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :event_entries
   resources :events
-  resources :platforms
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

@@ -1,3 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :gamertag, :platforms
+  attributes :id, :name, :password, :platform
 end

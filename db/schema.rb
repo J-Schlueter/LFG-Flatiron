@@ -10,39 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_165116) do
+
+ActiveRecord::Schema.define(version: 2022_01_25_165944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "event_entries", force: :cascade do |t|
+    t.string "gamertag"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_entries_on_event_id"
+    t.index ["user_id"], name: "index_event_entries_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "game"
     t.string "platform"
     t.datetime "time"
-    t.integer "respondees"
-    t.bigint "user_id", null: false
-    t.bigint "platform_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["platform_id"], name: "index_events_on_platform_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
-  end
-
-  create_table "platforms", force: :cascade do |t|
-    t.string "name"
-    t.string "games"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "gamertag"
-    t.string "platforms"
+    t.string "password"
+    t.string "platform"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "events", "platforms"
-  add_foreign_key "events", "users"
+
+  add_foreign_key "event_entries", "events"
+  add_foreign_key "event_entries", "users"
 end
