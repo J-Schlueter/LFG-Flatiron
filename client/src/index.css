@@ -40,6 +40,42 @@ code {
   color: rgb(31, 31, 31);
 }
 
+.NavBarULRight {
+  float: right;
+}
+
+/* .signupForm {
+  margin-top: 45px;
+} */
+
+/* .signUpInput {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: rgb(46, 46, 46);
+  border-radius: 4px;
+  color: #fff;
+} */
+
+.signupForm {
+  margin-top: 45px;
+}
+
+.signup {
+  /* float: right; */
+  margin: auto;
+  margin-top: 55px;
+  width: 30px;
+  /* margin: auto; */
+  width: 15%;
+  height: 150px;
+  border: 3px solid rgb(90, 100, 90);
+  padding: 10px;
+} 
+
 body {
   /* background-color: #d4d4d4; */
 }
