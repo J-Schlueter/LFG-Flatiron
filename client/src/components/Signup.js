@@ -1,12 +1,14 @@
 import NavBar from "./NavBar"
 import React, {useState} from "react"
 
-function Signup({currentUser, setCurrentUser}) {
+function Signup({currentUser, setCurrentUser, allUsers}) {
     const [name, setName] = useState()
     const [password, setPassword] = useState()
 
     function submitEvent(e) {
         e.preventDefault()
+        const matchingName = allUsers.find(u => u.name == name)
+        if(matchingName == undefined) {
         const user = {
             name,
             password
@@ -21,6 +23,9 @@ function Signup({currentUser, setCurrentUser}) {
                 res.json().then(setCurrentUser)
             }
         })
+        } else {
+            console.log("Name already Exists!")
+        }
     }
 
     function test() {
