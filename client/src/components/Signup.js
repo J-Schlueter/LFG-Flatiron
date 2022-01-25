@@ -1,7 +1,7 @@
 import NavBar from "./NavBar"
 import React, {useState} from "react"
 
-function Signup() {
+function Signup({currentUser, setCurrentUser}) {
     const [name, setName] = useState()
     const [password, setPassword] = useState()
 
@@ -18,9 +18,13 @@ function Signup() {
         })
         .then(res => {
             if(res.ok){
-                // res.json().then()
+                res.json().then(setCurrentUser)
             }
         })
+    }
+
+    function test() {
+        console.log(currentUser)
     }
     return(
         <div>
@@ -33,6 +37,7 @@ function Signup() {
                     <input placeholder="Gamertag(s)" className="signUpInput"></input> */}
                     <button onClick={(e) => submitEvent(e)}>Create Account</button>
                 </form>
+                    <button onClick={() => test()}>log current user</button>
             </div>
         </div>
     )
