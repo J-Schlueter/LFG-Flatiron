@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :user
-  belongs_to :platform
+    has_many :event_entries
+    has_many :users, through: :event_entries
 end

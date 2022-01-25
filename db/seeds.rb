@@ -5,24 +5,44 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "🌱 Seeding data..."
+puts "Generating gamers..."
 
-3.times {Platform.create(
-    name: Faker::Game.platform,
-    games: Faker::Game.title
-)}
+Event.create([
+    {
+      game: "Halo Infinite",
+      platform: "PC",
+      time: DateTime.new(2022,2,4,18)
+    },
+    {
+      game: "FFXIV",
+      platform: "PC",
+      time: DateTime.new(2022,2,4,19)
+    },
+    {
+      game: "Super Smash Bros Ultimate",
+      platform: "Nintendo Switch",
+      time: DateTime.new(2022,2,5,12)
+    }
+  ])
 
-10.times {User.create(
-    name: Faker::Name.name,
-    gamertag: Faker::Name.name,
-    platforms: Faker::Game.platform
-)}
+  User.create([
+    {
+      name: "Joshua",
+      password: "123",
+      platform: "PC, Playstation 4, Xbox 360"
+    },
+    {
+      name: "Kenneth",
+      password: "123",
+      platform: "PC"
+    },
+  ])
 
-5.times {Event.create(
-    game: Faker::Game.title
-    platform: Faker::Game.platform
-    time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
-    respondees: rand(1...20)
-)}
-
-puts "✅ Done seeding!"
+  EventEntry.create([
+      {
+          gamertag: "JShooter",
+          user_id: 1,
+          event_id: 1
+      }
+  ])
+puts "✅ Ready up!"
