@@ -12,9 +12,9 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/platforms", type: :request do
+RSpec.describe "/event_entries", type: :request do
   # This should return the minimal set of attributes required to create a valid
-  # Platform. As you add validations to Platform, be sure to
+  # EventEntry. As you add validations to EventEntry, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -26,7 +26,7 @@ RSpec.describe "/platforms", type: :request do
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
-  # PlatformsController, or in your router and rack
+  # EventEntriesController, or in your router and rack
   # middleware. Be sure to keep this updated too.
   let(:valid_headers) {
     {}
@@ -34,48 +34,48 @@ RSpec.describe "/platforms", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Platform.create! valid_attributes
-      get platforms_url, headers: valid_headers, as: :json
+      EventEntry.create! valid_attributes
+      get event_entries_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      platform = Platform.create! valid_attributes
-      get platform_url(platform), as: :json
+      event_entry = EventEntry.create! valid_attributes
+      get event_entry_url(event_entry), as: :json
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Platform" do
+      it "creates a new EventEntry" do
         expect {
-          post platforms_url,
-               params: { platform: valid_attributes }, headers: valid_headers, as: :json
-        }.to change(Platform, :count).by(1)
+          post event_entries_url,
+               params: { event_entry: valid_attributes }, headers: valid_headers, as: :json
+        }.to change(EventEntry, :count).by(1)
       end
 
-      it "renders a JSON response with the new platform" do
-        post platforms_url,
-             params: { platform: valid_attributes }, headers: valid_headers, as: :json
+      it "renders a JSON response with the new event_entry" do
+        post event_entries_url,
+             params: { event_entry: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Platform" do
+      it "does not create a new EventEntry" do
         expect {
-          post platforms_url,
-               params: { platform: invalid_attributes }, as: :json
-        }.to change(Platform, :count).by(0)
+          post event_entries_url,
+               params: { event_entry: invalid_attributes }, as: :json
+        }.to change(EventEntry, :count).by(0)
       end
 
-      it "renders a JSON response with errors for the new platform" do
-        post platforms_url,
-             params: { platform: invalid_attributes }, headers: valid_headers, as: :json
+      it "renders a JSON response with errors for the new event_entry" do
+        post event_entries_url,
+             params: { event_entry: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq("application/json")
       end
@@ -88,28 +88,28 @@ RSpec.describe "/platforms", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested platform" do
-        platform = Platform.create! valid_attributes
-        patch platform_url(platform),
-              params: { platform: new_attributes }, headers: valid_headers, as: :json
-        platform.reload
+      it "updates the requested event_entry" do
+        event_entry = EventEntry.create! valid_attributes
+        patch event_entry_url(event_entry),
+              params: { event_entry: new_attributes }, headers: valid_headers, as: :json
+        event_entry.reload
         skip("Add assertions for updated state")
       end
 
-      it "renders a JSON response with the platform" do
-        platform = Platform.create! valid_attributes
-        patch platform_url(platform),
-              params: { platform: new_attributes }, headers: valid_headers, as: :json
+      it "renders a JSON response with the event_entry" do
+        event_entry = EventEntry.create! valid_attributes
+        patch event_entry_url(event_entry),
+              params: { event_entry: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
     context "with invalid parameters" do
-      it "renders a JSON response with errors for the platform" do
-        platform = Platform.create! valid_attributes
-        patch platform_url(platform),
-              params: { platform: invalid_attributes }, headers: valid_headers, as: :json
+      it "renders a JSON response with errors for the event_entry" do
+        event_entry = EventEntry.create! valid_attributes
+        patch event_entry_url(event_entry),
+              params: { event_entry: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to eq("application/json")
       end
@@ -117,11 +117,11 @@ RSpec.describe "/platforms", type: :request do
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested platform" do
-      platform = Platform.create! valid_attributes
+    it "destroys the requested event_entry" do
+      event_entry = EventEntry.create! valid_attributes
       expect {
-        delete platform_url(platform), headers: valid_headers, as: :json
-      }.to change(Platform, :count).by(-1)
+        delete event_entry_url(event_entry), headers: valid_headers, as: :json
+      }.to change(EventEntry, :count).by(-1)
     end
   end
 end
