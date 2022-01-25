@@ -7,22 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "🌱 Seeding data..."
 
-3.times {Platform.create(
+3.times do Platform.create(
     name: Faker::Game.platform,
     games: Faker::Game.title
-)}
+)
+end
 
-10.times {User.create(
+10.times do User.create(
     name: Faker::Name.name,
     gamertag: Faker::Name.name,
-    platforms: Faker::Game.platform
-)}
-
-5.times {Event.create(
-    game: Faker::Game.title
     platform: Faker::Game.platform
+)
+end
+
+5.times do Event.create(
+    game: Faker::Game.title,
+    platform: Faker::Game.platform,
     time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
     respondees: rand(1...20)
-)}
-
+)
+end
 puts "✅ Done seeding!"
