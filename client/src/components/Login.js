@@ -8,6 +8,7 @@ function Login({allUsers, setCurrentUser}) {
         e.preventDefault()
         const validUsernames = (allUsers.filter((user) => user.name == name))
         const validPassword = validUsernames.map(user => user.password)
+        console.log(validUsernames)
 
         if(password == validPassword){
             console.log("Logged in!")
