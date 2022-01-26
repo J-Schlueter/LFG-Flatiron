@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"
 
-function CreateEvent() {
+function CreateEvent({currentUser}) {
     const [game, setGame] = useState()
     const [platform, setPlatform]= useState()
     const [time, setTime] = useState()
@@ -21,7 +21,7 @@ function CreateEvent() {
     }
     return(
         <div>
-        <NavBar />
+        <NavBar currentUser={currentUser}/>
             <div>
                 <form>
                     <input placeholder="Game" onChange={(e) => setGame(e.target.value)}></input>
