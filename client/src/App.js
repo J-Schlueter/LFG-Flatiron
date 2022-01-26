@@ -14,7 +14,7 @@ function App() {
     fetch("http://localhost:3000/users")
     .then(resp => resp.json())
     .then(users => setAllUsers(users))
-  })
+  },[])
   return (
     <div className="App">
       <BrowserRouter>
