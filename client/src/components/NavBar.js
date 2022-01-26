@@ -10,6 +10,10 @@ function NavBar() {
                 <Link to= "/createevent" className="navBarLink">Create Event</Link>
                 <Link to= "/profile" className="navBarLink">Profile</Link>
             </ul>
+            <ul className = "NavBarULRight">
+                <Link to= "/login" className="navBarLink">Login</Link>
+                <Link to= "/signup" className="navBarLink">Signup</Link>
+            </ul>
         </div>
     )
 }
