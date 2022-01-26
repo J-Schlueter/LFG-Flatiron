@@ -1,7 +1,7 @@
 import NavBar from "./NavBar"
 import React, {useEffect, useState} from "react"
 
-function Login({allUsers, setCurrentUser}) {
+function Login({allUsers, setCurrentUser, currentUser}) {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     function handleLogin(e) {
@@ -38,7 +38,7 @@ function Login({allUsers, setCurrentUser}) {
     }
     return(
         <div>
-        <NavBar />
+        <NavBar currentUser={currentUser}/>
             <div className="signup">
                 <form className="signupForm">
                     <input placeholder="Name" value={name} className="signUpInput" onChange={(e) => setName(e.target.value)}></input>

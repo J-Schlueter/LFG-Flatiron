@@ -29,10 +29,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage currentUser={currentUser}/>} />
-        <Route path="/createevent" element={<CreateEvent />} />
+        <Route path="/createevent" element={<CreateEvent currentUser={currentUser}/>} />
         <Route path= "/profile" element={<Profile currentUser={currentUser} allEntries={allEntries}/>} />
         <Route path= "/signup" element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers}/>} />
-        <Route path= "/login" element={<Login allUsers={allUsers} setCurrentUser={setCurrentUser}/>} />
+        <Route path= "/login" element={<Login allUsers={allUsers} setCurrentUser={setCurrentUser} currentUser={currentUser}/>} />
       </Routes>
       </BrowserRouter>
     </div>

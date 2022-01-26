@@ -24,7 +24,7 @@ function Profile({currentUser, allEntries}) {
 
     return(
         <div>
-        <NavBar />
+        <NavBar currentUser={currentUser}/>
         <div className="profilePage">
             <h1>Welcome, {currentUser.name}</h1>
             {loadMyEntries}

@@ -4,7 +4,7 @@ import EventsContainer from "./EventsContainer"
 function HomePage({currentUser}) {
     return(
         <div>
-            <NavBar />
+            <NavBar currentUser={currentUser}/>
             <div className="homePageDiv">
                 <h1>Welcome to Flatiron LFG</h1>
             <EventsContainer currentUser={currentUser}/>
