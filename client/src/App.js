@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage currentUser={currentUser}/>} />
         <Route path="/createevent" element={<CreateEvent />} />
         <Route path= "/profile" element={<Profile />} />
         <Route path= "/signup" element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers}/>} />
