@@ -28,13 +28,11 @@ Event.create([
   User.create([
     {
       name: "Joshua",
-      password: "123",
-      platform: "PC, Playstation 4, Xbox 360"
+      password: "123"
     },
     {
       name: "Kenneth",
-      password: "123",
-      platform: "PC"
+      password: "123"
     },
   ])
 
