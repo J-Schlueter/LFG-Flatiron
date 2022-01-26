@@ -28,7 +28,7 @@ function Profile({currentUser, allEntries}) {
         <div className="profilePage">
             <h1>Welcome, {currentUser.name}</h1>
             {loadMyEntries}
-            <button onClick={() => console.log(myEntries)}>Check My Entries</button>
+            <button onClick={() => console.log(myEntries)}>Log My Entries</button>
         </div>
         </div>
     )
