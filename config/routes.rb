@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/login'
-  get 'sessions/welcome'
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   resources :event_entries
   resources :events
   resources :users
