@@ -49,4 +49,4 @@ group :test do
 end
 
 gem "active_model_serializers", "~> 0.10.12"
-gem "faker"
+gem 'bcrypt', '~> 3.1.7'
