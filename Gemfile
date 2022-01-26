@@ -50,7 +50,6 @@ end
 
 gem "active_model_serializers", "~> 0.10.12"
 
-gem 'bcrypt', '~> 3.1.7'
 
 
 # Rack middleware. Used specifically for parsing the request body into params.
