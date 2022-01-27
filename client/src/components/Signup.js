@@ -1,5 +1,6 @@
 import NavBar from "./NavBar"
 import React, {useState} from "react"
+import {Link} from "react-router-dom";
 
 function Signup({currentUser, setCurrentUser, allUsers}) {
     const [name, setName] = useState()
@@ -9,20 +10,22 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
         e.preventDefault()
         const matchingName = allUsers.find(u => u.name == name)
         if(matchingName == undefined) {
-        const user = {
-            name,
-            password
-        }
-        fetch('http://localhost:3000/users',{
-            method: "POST",
-            headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(user)
-        })
-        .then(res => {
-            if(res.ok){
-                res.json().then(setCurrentUser)
+            const user = {
+                name: name,
+                password: password
             }
-        })
+            fetch('http://localhost:3000/users',{
+                method: "POST",
+                headers:{'Content-Type':'application/json'},
+                body: JSON.stringify(user)
+            })
+            .then(res => {
+                if(res.ok){
+                    res.json().then(setCurrentUser)
+                }
+                window.location.href = "http://localhost:4000/login";
+                // setCurrentUser(user)
+            })
         } else {
             console.log("Name already Exists!")
         }
