@@ -28,7 +28,7 @@ function CreateEvent({currentUser, setCurrentUser}) {
                     <p>Create an Event</p>
                     <input placeholder="Game" onChange={(e) => setGame(e.target.value)} className="signUpInput"></input>
                     <input placeholder="Platform" onChange={(e) => setPlatform(e.target.value)} className="signUpInput"></input>
-                    <input placeholder="Time" onChange={(e) => setTime(e.target.value)} className="signUpInput"></input>
+                    <input placeholder="Time" type="datetime-local" onChange={(e) => setTime(e.target.value)} className="signUpInput"></input>
                 </form>
                     <button onClick={(e) => handleCreate(e)} className="formButton">Create Event</button>
             </div>
