@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :event_entries, only: [:index, :create, :show, :destroy, :update]
   resources :events, only:  [:index, :create, :show, :destroy]
   resources :users, only:  [:index, :create, :show, :update, :destroy]
+  get '/me', to: "users#showme"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   # Routing logic: fallback requests for React Router.

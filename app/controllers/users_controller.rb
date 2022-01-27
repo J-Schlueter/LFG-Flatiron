@@ -13,10 +13,17 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def showme
+    if current_user
+      render json: current_user, status: :ok
+    else
+      render json: "No current session stored", status: :unauthorized
+    end
+  end
+
   # POST /users
   def create
     @user = User.new(user_params)
-    
 
     if @user.save
       render json: @user, status: :created, location: @user

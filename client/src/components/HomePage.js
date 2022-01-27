@@ -1,10 +1,10 @@
 import NavBar from "./NavBar"
 import EventsContainer from "./EventsContainer"
 
-function HomePage({currentUser}) {
+function HomePage({currentUser, setCurrentUser}) {
     return(
         <div>
-            <NavBar currentUser={currentUser}/>
+            <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
             <div className="homePageDiv">
                 <h1>Welcome to Flatiron LFG</h1>
             <EventsContainer currentUser={currentUser}/>

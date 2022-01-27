@@ -10,6 +10,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
   const [allUsers, setAllUsers] = useState([])
   const [allEntries, setAllEntries] = useState([])
+  const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/users")
@@ -22,15 +23,31 @@ function App() {
     .then(resp => resp.json())
     .then(entries => setAllEntries(entries))
 },[])
+
+useEffect(() => {
+  fetch("/me", {
+    credentials: "include",
+  }).then((res) => {
+    if (res.ok) {
+      res.json().then((user) => {
+        setCurrentUser(user);
+        setAuthenticated(true);
+        console.log(user)
+      });
+    } else {
+      setAuthenticated(true);
+    }
+  });
+}, []);
   return (
     <div className="App">
-      <button onClick={() => setCurrentUser(allUsers[0])}>Login as Joshua</button>
-      <button onClick={() => setCurrentUser(allUsers[1])}>Login as Kenneth</button>
+      {/* <button onClick={() => setCurrentUser(allUsers[0])}>Login as Joshua</button>
+      <button onClick={() => setCurrentUser(allUsers[1])}>Login as Kenneth</button> */}
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage currentUser={currentUser}/>} />
-        <Route path="/createevent" element={<CreateEvent currentUser={currentUser}/>} />
-        <Route path= "/profile" element={<Profile currentUser={currentUser} allEntries={allEntries}/>} />
+        <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/createevent" element={<CreateEvent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path= "/profile" element={<Profile currentUser={currentUser} allEntries={allEntries} setCurrentUser={setCurrentUser}/>} />
         <Route path= "/signup" element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers}/>} />
         <Route path= "/login" element={<Login allUsers={allUsers} setCurrentUser={setCurrentUser} currentUser={currentUser}/>} />
       </Routes>

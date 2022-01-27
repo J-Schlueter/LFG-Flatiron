@@ -33,16 +33,16 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
     }
     return(
         <div>
-        <NavBar />
+        <NavBar setCurrentUser={setCurrentUser}/>
             <div className="signup">
-                <form className="signupForm">
+                <form className="signupForm" >
+                    <p>Signup</p>
                     <input placeholder="Name" className="signUpInput"  onChange={(e) => setName(e.target.value)}></input>
                     <input placeholder="Password" className="signUpInput"  onChange={(e) => setPassword(e.target.value)}></input>
                     {/* <input placeholder="Platform(s)" className="signUpInput"></input>
                     <input placeholder="Gamertag(s)" className="signUpInput"></input> */}
-                    <button onClick={(e) => submitEvent(e)}>Create Account</button>
                 </form>
-                    <button onClick={() => test()}>log current user</button>
+                    <button onClick={(e) => submitEvent(e)} className="formButton">Create Account</button>
             </div>
         </div>
     )

@@ -38,15 +38,16 @@ function Login({allUsers, setCurrentUser, currentUser}) {
     }
     return(
         <div>
-        <NavBar currentUser={currentUser}/>
+        <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
             <div className="signup">
                 <form className="signupForm">
+                    <p>Login</p>
                     <input placeholder="Name" value={name} className="signUpInput" onChange={(e) => setName(e.target.value)}></input>
                     <input placeholder="Password" value={password} className="signUpInput" onChange={(e) => setPassword(e.target.value)}></input>
                     {/* <input placeholder="Platform(s)" className="signUpInput"></input>
                     <input placeholder="Gamertag(s)" className="signUpInput"></input> */}
-                    <button onClick={(e) => handleLogin(e)}>Login</button>
                 </form>
+                    <button onClick={(e) => handleLogin(e)} className="formButton">Login</button>
             </div>
         </div>
     )
