@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    user = User.create(user_params)
+    user = User.create!(user_params)
       if user.valid?
         session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
         render json: user, status: :ok

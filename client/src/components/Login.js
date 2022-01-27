@@ -29,10 +29,14 @@ function Login({allUsers, setCurrentUser, currentUser}) {
           })
           .then(resp => resp.json())
           .then((user) => {
+              if(user.name == undefined) {
+                  setCurrentUser(undefined)
+                  window.alert("Invalid Credentials")
+              } else {
               console.log(user);
               setCurrentUser(user);
               setName("")
-              setPassword("")
+              setPassword("")}
           })
 
     }
