@@ -27,7 +27,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 // setCurrentUser(user)
             })
         } else {
-            console.log("Name already Exists!")
+            window.alert("Name already Exists!")
         }
     }
 
