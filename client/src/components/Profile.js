@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import NavBar from "./NavBar"
 import ProfileEntry from "./ProfileEntry"
 
-function Profile({currentUser, allEntries}) {
+function Profile({currentUser, allEntries, setCurrentUser}) {
     const [myEntries, setMyEntries] = useState([])
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     
@@ -24,11 +24,12 @@ function Profile({currentUser, allEntries}) {
 
     return(
         <div>
-        <NavBar currentUser={currentUser}/>
+        <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <div className="profilePage">
             <h1>Welcome, {currentUser.name}</h1>
+            <div className="browseEventsList">
             {loadMyEntries}
-            <button onClick={() => console.log(myEntries)}>Log My Entries</button>
+            </div>
         </div>
         </div>
     )

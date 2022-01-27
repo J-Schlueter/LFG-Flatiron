@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 
-function NavBar({currentUser}) {
+function NavBar({currentUser, setCurrentUser}) {
 
 
     // const loggedInRender = (
@@ -29,6 +29,15 @@ function NavBar({currentUser}) {
     //         </ul>
     //     </div>
     // )
+    const handleLogout = () => {
+        fetch('/logout', {method: "DELETE"})
+        .then(res => {
+              if (res.ok) {
+                setCurrentUser(undefined)
+              }
+            })
+      }
+
     function renderNav() {
         if(currentUser == undefined) {
             return <div className="NavBar">
@@ -48,7 +57,8 @@ function NavBar({currentUser}) {
                 <Link to= "/profile" className="navBarLink">Profile</Link>
             </ul>
             <ul className = "NavBarULRight">
-                <h2>{currentUser.name}</h2>
+                <h2 className="navBarLink">{currentUser.name}</h2>
+                <Link to= "/login" onClick={() => handleLogout()} className="navBarLink">Logout</Link>
             </ul>
         </div>
         }

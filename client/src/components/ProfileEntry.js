@@ -45,7 +45,7 @@ const [newTagCreation, toggleNewTagCreate] = useState(false)
     }
 
     return(
-        <div className="profileEntry">
+        <div className="eventCard">
             <h2>{entry.event.game}</h2>
             <h4>{entry.event.time}</h4>
             <h4>Your GamerTag: {entry.gamertag}</h4>

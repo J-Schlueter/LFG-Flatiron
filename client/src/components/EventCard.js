@@ -21,6 +21,7 @@ function EventCard({event, currentUser, allEntries}) {
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(data)
         })
+        window.location.reload()
     }
 
     const rsvpPanel = (

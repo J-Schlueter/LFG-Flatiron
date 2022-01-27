@@ -18,7 +18,7 @@ function EventsContainer({currentUser}) {
         <EventCard event={event} currentUser={currentUser} allEntries={allEntries}/>
     ) )
     return (
-        <div>
+        <div className="browseEventsList">
             {renderEvents}
         </div>
     )
