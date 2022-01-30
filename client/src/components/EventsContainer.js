@@ -9,7 +9,7 @@ function EventsContainer({currentUser}) {
     .then(resp => resp.json())
     .then(events => setAllEvents(events))),[])
 
-    useEffect(() => (fetch("http://localhost:3000/event_entries")
+    useEffect(() => (fetch("https://lfg-flatiron.herokuapp.com/event_entries")
     .then(resp => resp.json())
     .then(entries => setAllEntries(entries))
     ),[])

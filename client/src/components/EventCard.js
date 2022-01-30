@@ -16,7 +16,7 @@ function EventCard({event, currentUser, allEntries}) {
             event_id: event.id
         }
         console.log(data)
-        fetch("http://localhost:3000/event_entries",{
+        fetch("https://lfg-flatiron.herokuapp.com/event_entries",{
             method: "POST",
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(data)

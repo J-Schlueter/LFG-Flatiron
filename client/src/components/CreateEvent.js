@@ -13,7 +13,7 @@ function CreateEvent({currentUser, setCurrentUser}) {
             platform: platform,
             time: time
         }
-        fetch('http://localhost:3000/events',{
+        fetch('https://lfg-flatiron.herokuapp.com/events',{
             method: "POST",
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(data)
