@@ -14,7 +14,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 name: name,
                 password: password
             }
-            fetch('https://lfg-flatiron.herokuapp.com/',{
+            fetch('https://lfg-flatiron.herokuapp.com/users',{
                 method: "POST",
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify(user)
