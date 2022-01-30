@@ -5,7 +5,7 @@ function EventsContainer({currentUser}) {
     const [allEvents, setAllEvents] = useState([])
     const [allEntries, setAllEntries] = useState([])
     
-    useEffect(() => (fetch("http://localhost:4000/events")
+    useEffect(() => (fetch("https://lfg-flatiron.herokuapp.com/events")
     .then(resp => resp.json())
     .then(events => setAllEvents(events))),[])
 
