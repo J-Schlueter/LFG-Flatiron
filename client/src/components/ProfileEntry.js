@@ -4,7 +4,7 @@ function ProfileEntry({entry}) {
 const [newTag, setNewTag] = useState()
 const [newTagCreation, toggleNewTagCreate] = useState(false)
     function handleDelete(e) {
-        fetch(`https://lfg-flatiron.herokuapp.com/${entry.id}`,{
+        fetch(`https://lfg-flatiron.herokuapp.com/event_entries/${entry.id}`,{
             method: "DELETE",
         })
         e.target.parentElement.remove()
@@ -19,7 +19,7 @@ const [newTagCreation, toggleNewTagCreate] = useState(false)
         const data = {
             gamertag: newTag
         }
-        fetch(`https://lfg-flatiron.herokuapp.com/${entry.id}`, {
+        fetch(`https://lfg-flatiron.herokuapp.com/event_entries/${entry.id}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json",
