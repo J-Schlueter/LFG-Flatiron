@@ -3,9 +3,9 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all.includes(:event_entries)
+    @events = Event.all.includes(:users)
 
-    render json: @events
+    render json: @events.includes(:users)
   end
 
   # GET /events/1
