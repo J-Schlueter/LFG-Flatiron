@@ -40,7 +40,8 @@ function EventCard({event, currentUser, allEntries}) {
         <h2>{event.game}</h2>
         <h3>{event.platform}</h3>
         <h3>{event.time}</h3>
-        {/*users*/}
+        <h3>{event.event_entries}</h3>
+        <h3>{event.users}</h3>
         </div>
     )
     const defaultCard = (
@@ -48,8 +49,6 @@ function EventCard({event, currentUser, allEntries}) {
         <h2>{event.game}</h2>
         <h3>{event.platform}</h3>
         <h3>{event.time}</h3>
-        <h3>{event.event_entries.gamertag}</h3>
-        <h3>{event.users.name}</h3>
         {currentUser ? <button onClick={() => toggleRSVP()}>RSVP</button> : undefined}
     </div>
         )
