@@ -13,13 +13,13 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://lfg-flatiron.herokuapp.com/users")
     .then(resp => resp.json())
     .then(users => setAllUsers(users))
   },[])
 
   useEffect(() => {
-    fetch("http://localhost:3000/event_entries")
+    fetch("https://lfg-flatiron.herokuapp.com/event_entries")
     .then(resp => resp.json())
     .then(entries => setAllEntries(entries))
 },[])
