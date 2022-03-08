@@ -14,7 +14,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 name: name,
                 password: password
             }
-            fetch('https://lfg-flatiron.herokuapp.com/users',{
+            fetch('localhost:3000/users',{
                 method: "POST",
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify(user)
@@ -23,7 +23,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 if(res.ok){
                     res.json().then(setCurrentUser)
                 }
-                window.location.href = "https://lfg-flatiron.herokuapp.com/login";
+                window.location.href = "localhost:3000/login";
                 // setCurrentUser(user)
             })
         } else {
