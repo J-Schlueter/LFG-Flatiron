@@ -30,7 +30,7 @@ const [newTagCreation, toggleNewTagCreate] = useState(false)
     }
 
     function renderButtons() {
-        if (newTagCreation == false) {
+        if (newTagCreation === false) {
             return <>
             <button onClick={(e) => handleUpdateTag()}>Update GamerTag</button>
             <button onClick={(e) => handleDelete(e)}>Leave Event</button>

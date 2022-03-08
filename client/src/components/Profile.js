@@ -7,13 +7,13 @@ function Profile({currentUser, allEntries, setCurrentUser}) {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     
     useEffect(() => {
-        if (currentUser == undefined) {
+        if (currentUser === undefined) {
             setIsLoggedIn(false)
         } else {
             setIsLoggedIn(true)
             console.log(allEntries[0].user.id)
             console.log(currentUser.id)
-        setMyEntries(allEntries.filter(e => e.user.id == currentUser.id))
+        setMyEntries(allEntries.filter(e => e.user.id === currentUser.id))
         console.log(myEntries)
         }
     },[])
@@ -26,7 +26,7 @@ function Profile({currentUser, allEntries, setCurrentUser}) {
         <div>
         <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <div className="profilePage">
-            {/* <h1>Welcome, {currentUser.name}</h1> */}
+            <h1>Welcome, {currentUser.name}</h1>
             <div className="browseEventsList">
             {loadMyEntries}
             </div>
