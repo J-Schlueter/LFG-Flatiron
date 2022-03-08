@@ -26,7 +26,7 @@ function Profile({currentUser, allEntries, setCurrentUser}) {
         <div>
         <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <div className="profilePage">
-            <h1>Welcome, {currentUser.name}</h1>
+            {/* <h1>Welcome, {currentUser.name}</h1> */}
             <div className="browseEventsList">
             {loadMyEntries}
             </div>
