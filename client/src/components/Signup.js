@@ -14,7 +14,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 name: name,
                 password: password
             }
-            fetch('localhost:3000/users',{
+            fetch('/users',{
                 method: "POST",
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify(user)
@@ -23,7 +23,7 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
                 if(res.ok){
                     res.json().then(setCurrentUser)
                 }
-                window.location.href = "localhost:3000/login";
+                window.location.href = "/login";
                 // setCurrentUser(user)
             })
         } else {
@@ -31,16 +31,14 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
         }
     }
 
-    function test() {
-        console.log(currentUser)
-    }
+  
     return(
         <div>
         <NavBar setCurrentUser={setCurrentUser}/>
             <div className="signup">
                 <form className="signupForm" >
                     <p>Signup</p>
-                    <input placeholder="Name" className="signUpInput"  onChange={(e) => setName(e.target.value)}></input>
+                    <input placeholder="Name" className="signUpInput"  onChange={(e) => setName(e.target.value.toLowerCase())}></input>
                     <input placeholder="Password" className="signUpInput"  onChange={(e) => setPassword(e.target.value)}></input>
                     {/* <input placeholder="Platform(s)" className="signUpInput"></input>
                     <input placeholder="Gamertag(s)" className="signUpInput"></input> */}

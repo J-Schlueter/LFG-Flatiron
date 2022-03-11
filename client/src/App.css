@@ -44,33 +44,12 @@
 --mango-tango: #f98948ff;
 --international-orange-aerospace: #ff5714ff;
 
-/* CSS HSL */
-/* --charcoal: hsla(197, 37%, 24%, 1);
---middle-blue: hsla(192, 76%, 75%, 1);
---minion-yellow: hsla(53, 98%, 65%, 1);
---mango-tango: hsla(22, 94%, 63%, 1);
---international-orange-aerospace: hsla(17, 100%, 54%, 1); */
-
 /* SCSS HEX */
 /* $charcoal: #264653ff;
 $middle-blue: #90ddf0ff;
 $minion-yellow: #fde74cff;
 $mango-tango: #f98948ff;
 $international-orange-aerospace: #ff5714ff; */
-
-/* SCSS HSL */
-/* $charcoal: hsla(197, 37%, 24%, 1);
-$middle-blue: hsla(192, 76%, 75%, 1);
-$minion-yellow: hsla(53, 98%, 65%, 1);
-$mango-tango: hsla(22, 94%, 63%, 1);
-$international-orange-aerospace: hsla(17, 100%, 54%, 1); */
-
-/* SCSS RGB
-$charcoal: rgba(38, 70, 83, 1);
-$middle-blue: rgba(144, 221, 240, 1);
-$minion-yellow: rgba(253, 231, 76, 1);
-$mango-tango: rgba(249, 137, 72, 1);
-$international-orange-aerospace: rgba(255, 87, 20, 1); */
 
 /* SCSS Gradient */
 /* $gradient-top: linear-gradient(0deg, #264653ff, #90ddf0ff, #fde74cff, #f98948ff, #ff5714ff);
