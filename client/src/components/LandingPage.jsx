@@ -8,12 +8,12 @@ function LandingPage() {
             <div className="landingHero" >
                 <div className="landingHeroText">
                     <h1>LOOKING FOR GROUP</h1>
-                    <h2>For when you want to group up</h2>
+                    <h2>Social gaming made easy</h2>
 
                 </div>
 
             </div>
-            <Link to= "/login" className="landingButtongit ">Login</Link>
+            <Link to= "/login" className="landingButton">Login</Link>
             <Link to= "/signup" className="landingButton">Signup</Link>
         </div>
 
