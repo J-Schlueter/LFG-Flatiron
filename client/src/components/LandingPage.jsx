@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
-
-function LandingPage() {
+export default function LandingPage() {
     return(
         <div>
             <div className="landingHero" >
@@ -13,11 +13,14 @@ function LandingPage() {
                 </div>
 
             </div>
-            <Link to= "/login" className="landingButton">Login</Link>
-            <Link to= "/signup" className="landingButton">Signup</Link>
+            <Link to= "/login" className="landingButton">
+                <Button variant="contained">Login</Button>
+            </Link>
+            <Link to= "/signup" className="landingButton">
+                <Button variant="contained">Signup</Button>
+            </Link>
         </div>
 
     );
 };
 
-export default LandingPage
