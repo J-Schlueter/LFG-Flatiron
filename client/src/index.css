@@ -47,6 +47,14 @@ code {
   float: right;
 }
 
+.landingHero {
+  background-color:"#59A552";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 /* .signupForm {
   margin-top: 45px;
 } */
