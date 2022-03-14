@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e0e7ec;
 }
 
 code {
@@ -19,8 +20,8 @@ code {
   padding-top: 10px;
   padding-bottom: 60px;
   width: 100%;
-  background-color: rgb(206, 206, 206);
-  box-shadow: 0 2px 4px 0 #888888;
+  background-color: rgb(236, 223, 43);
+  box-shadow: 0 1px 2px 0 #888888;
 } 
 
 .NavBarUL {
@@ -29,6 +30,7 @@ code {
   font-size: medium;
   font-weight: 700;
   color: #9b9b9b;
+  
 }
 
 .navBarLink {
@@ -37,7 +39,8 @@ code {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
-  color: rgb(31, 31, 31);
+  -webkit-text-stroke: 1px #0f0f0f;
+  color: rgb(250, 250, 250);
 }
 
 .NavBarULRight {

@@ -20,7 +20,7 @@ function Login({allUsers, setCurrentUser, currentUser}) {
             name: name,
             password: password
         }
-        fetch("/login", {
+        fetch("https://lfg-flatiron.herokuapp.com/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

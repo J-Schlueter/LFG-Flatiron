@@ -5,6 +5,7 @@ import CreateEvent from "./components/CreateEvent";
 import Profile from "./components/Profile";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -45,7 +46,8 @@ useEffect(() => {
       <button onClick={() => setCurrentUser(allUsers[1])}>Login as Kenneth</button> */}
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/createevent" element={<CreateEvent currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path= "/profile" element={<Profile currentUser={currentUser} allEntries={allEntries} setCurrentUser={setCurrentUser}/>} />
         <Route path= "/signup" element={<Signup currentUser={currentUser} setCurrentUser={setCurrentUser} allUsers={allUsers}/>} />
