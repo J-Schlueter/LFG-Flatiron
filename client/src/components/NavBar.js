@@ -18,7 +18,7 @@ export default function NavBar({currentUser, setCurrentUser}) {
         if(currentUser == undefined) {
             return <div className="NavBar">
             <ul className="NavBarUL">
-                <Link to= "/" className="navBarLink">Home</Link>
+                <Link to= "/home" className="navBarLink">Home</Link>
             </ul>
             <ul className = "NavBarULRight">
                 <Link to= "/login" className="navBarLink">Login</Link>
