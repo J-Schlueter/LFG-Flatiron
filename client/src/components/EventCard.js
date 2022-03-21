@@ -5,6 +5,7 @@ function EventCard({event, currentUser, allEntries}) {
     const [rsvpTrue, setRSVPTrue] = useState(false)
     const [gamerTag, setGamerTag] = useState()
 
+    const cardEntries = event.event_entries
     
     function toggleRSVP() {
         console.log(event)
@@ -49,12 +50,13 @@ function EventCard({event, currentUser, allEntries}) {
     )
     const defaultCard = (
         <div className="eventCard">
-            <h2>{event.game}</h2>
-            <h3>{event.platform}</h3>
-            <h3>{event.time}</h3>
+            <h2>Game: {event.game}</h2>
+            <h3>Platform: {event.platform}</h3>
+            <h3>When: {event.time}</h3>
             {currentUser ? <button onClick={() => toggleRSVP()}>RSVP</button> : undefined}
-            <ul>{event.event_entries.gamertag}</ul>
+            <p>Who: {event.event_entries.gamertag}</p>
         </div>);
+        
     function toggleCard() {
         if (rsvpTrue === true) {
 
@@ -65,19 +67,8 @@ function EventCard({event, currentUser, allEntries}) {
             return (rsvpPanel)
         }
     }
-    // useEffect(() => {
-    //     if(currentUser == undefined) {
-    //         console.log("Not Logged In")
-    //     } else {
-    //         console.log(allEntries)
-    //     const existingEntries = allEntries.filter(e => e.user.id == currentUser.id && e.event.id == event.id)
-    //     console.log(existingEntries)
-    //     const existingEntry = existingEntries.find(e => e == event)
-    //     console.log(existingEntry)
-    //     // console.log(`"already RSVP'D`)
-    // }
-    //     // if()
-    // },[])
+    
+
     return(
         toggleCard()
     )

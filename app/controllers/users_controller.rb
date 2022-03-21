@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  # GET /me
   def showme
     if current_user
       render json: current_user, status: :ok

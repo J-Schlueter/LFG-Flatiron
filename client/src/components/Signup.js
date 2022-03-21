@@ -8,8 +8,8 @@ function Signup({currentUser, setCurrentUser, allUsers}) {
 
     function submitEvent(e) {
         e.preventDefault()
-        const matchingName = allUsers.find(u => u.name == name)
-        if(matchingName == undefined) {
+        const matchingName = allUsers.find(u => u.name === name)
+        if(matchingName === undefined) {
             const user = {
                 name: name,
                 password: password
