@@ -5,11 +5,11 @@ function EventCard({event, currentUser, allEntries}) {
     const [rsvpTrue, setRSVPTrue] = useState(false)
     const [gamerTag, setGamerTag] = useState()
 
-    const cardEntries = event.event_entries
+    // const cardEntries = event.event_entries[0].gamertag
+
     
+
     function toggleRSVP() {
-        console.log(event)
-        console.log(currentUser)
         setRSVPToggle(!rsvpToggle)
     }
 
@@ -56,7 +56,7 @@ function EventCard({event, currentUser, allEntries}) {
             {currentUser ? <button onClick={() => toggleRSVP()}>RSVP</button> : undefined}
             <p>Who: {event.event_entries.gamertag}</p>
         </div>);
-        
+
     function toggleCard() {
         if (rsvpTrue === true) {
 
