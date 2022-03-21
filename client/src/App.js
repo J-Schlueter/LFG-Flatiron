@@ -13,6 +13,8 @@ function App() {
   const [allEntries, setAllEntries] = useState([])
   const [authenticated, setAuthenticated] = useState(false);
 
+  console.log(authenticated)
+
   useEffect(() => {
     fetch("https://lfg-flatiron.herokuapp.com/users")
     .then(resp => resp.json())

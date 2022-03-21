@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ export default function NavBar({currentUser, setCurrentUser}) {
       }
 
     function renderNav() {
-        if(currentUser == undefined) {
+        if(currentUser === undefined) {
             return <div className="NavBar">
             <ul className="NavBarUL">
                 <Link to= "/home" className="navBarLink">Home</Link>

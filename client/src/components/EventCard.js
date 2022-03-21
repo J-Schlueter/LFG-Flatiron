@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from "react";
-import moment from "moment";
+import React, {useState} from "react";
+
 function EventCard({event, currentUser, allEntries}) {
     const [rsvpToggle, setRSVPToggle] = useState(false)
     const [rsvpTrue, setRSVPTrue] = useState(false)
     const [gamerTag, setGamerTag] = useState()
+
+    
     function toggleRSVP() {
         console.log(event)
         console.log(currentUser)
@@ -17,7 +19,7 @@ function EventCard({event, currentUser, allEntries}) {
             event_id: event.id
         }
         console.log(data)
-        fetch("localhost:3000/event_entries",{
+        fetch("https://lfg-flatiron.herokuapp.com/event_entries",{
             method: "POST",
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(data)
@@ -46,19 +48,18 @@ function EventCard({event, currentUser, allEntries}) {
         </div>
     )
     const defaultCard = (
-        let d = moment().format("January 21st at 9:31pm")
         <div className="eventCard">
-        <h2>{event.game}</h2>
-        <h3>{event.platform}</h3>
-        <h3>{event.time}</h3>
-        {currentUser ? <button onClick={() => toggleRSVP()}>RSVP</button> : undefined}
-    </div>
-        )
+            <h2>{event.game}</h2>
+            <h3>{event.platform}</h3>
+            <h3>{event.time}</h3>
+            {currentUser ? <button onClick={() => toggleRSVP()}>RSVP</button> : undefined}
+            <ul>{event.event_entries.gamertag}</ul>
+        </div>);
     function toggleCard() {
-        if (rsvpTrue == true) {
+        if (rsvpTrue === true) {
 
         }
-       else if (rsvpToggle == false) {
+       else if (rsvpToggle === false) {
             return (defaultCard)
         } else {
             return (rsvpPanel)
