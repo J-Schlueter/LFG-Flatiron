@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import moment from "moment";
 function EventCard({event, currentUser, allEntries}) {
     const [rsvpToggle, setRSVPToggle] = useState(false)
     const [rsvpTrue, setRSVPTrue] = useState(false)
@@ -45,6 +46,7 @@ function EventCard({event, currentUser, allEntries}) {
         </div>
     )
     const defaultCard = (
+        let d = moment().format("January 21st at 9:31pm")
         <div className="eventCard">
         <h2>{event.game}</h2>
         <h3>{event.platform}</h3>
