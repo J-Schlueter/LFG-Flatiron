@@ -28,7 +28,7 @@ export default function NavBar({currentUser, setCurrentUser}) {
         } else {
             return <div className="NavBar">
             <ul className="NavBarUL">
-                <Link to= "/" className="navBarLink">Home</Link>
+                <Link to= "/home" className="navBarLink">Home</Link>
                 <Link to= "/createevent" className="navBarLink">Create Event</Link>
                 <Link to= "/profile" className="navBarLink">Profile</Link>
             </ul>
